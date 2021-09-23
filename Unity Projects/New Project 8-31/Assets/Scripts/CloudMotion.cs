@@ -5,11 +5,20 @@ using UnityEngine;
 public class CloudMotion : MonoBehaviour
 {
     public float speed = 1;
+    public float rightEdge = 41;
+    public float leftEdge = -12;
     // Update is called once per frame
     void Update()
     {
         Vector3 tempPosition = this.transform.position;
-        tempPosition.x += speed * Time.deltaTime;
+        if (this.transform.position.x >= rightEdge)
+        {
+            tempPosition.x = leftEdge;
+        }
+        else
+        {
+            tempPosition.x += speed * Time.deltaTime;
+        }
         this.transform.position = tempPosition;
     }
 }
