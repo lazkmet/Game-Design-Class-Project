@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public void LoadLevel(string name) { 
-    
+    public void LoadLevel(string name) {
+        SceneManager.LoadScene(name);
     }
-    public void QuitGame(){ 
-
+    public void QuitGame(){
+        Application.Quit();
     }
 }
